@@ -9,6 +9,15 @@ public class Person {
     //constructor
     public Person(int id, String firstName, String lastName, String email) {
         this.id = id;
+        if(firstName == null || firstName.trim().isEmpty()) {
+            throw new IllegalArgumentException("The firstname can't be empty!");
+        }
+        if(lastName == null || lastName.trim().isEmpty()) {
+            throw new IllegalArgumentException("The lastname can't be empty!");
+        }
+        if(email == null || email.trim().isEmpty()) {
+            throw new IllegalArgumentException("The email can't be empty!");
+        }
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -36,39 +45,27 @@ public class Person {
 
 
     public void setFirstName(String firstName) {
-        try {
-            if ( firstName != null && !firstName.trim().isEmpty()){
-                this.firstName = firstName;
-            } else {
-                System.out.println(" Your input is empty. ");
-            }
-        } catch ( Exception e) {
-            System.out.println("There 's a problem" + e.getMessage());
+        if(firstName == null || firstName.trim().isEmpty()) {
+            throw new IllegalArgumentException("The lastname can't be empty!");
         }
+        this.firstName = firstName;
     }
 
     public void setLastName(String lastName) {
-        try {
-            if ( lastName != null && !lastName.trim().isEmpty()){
-                this.lastName = lastName;
-            } else {
-                System.out.println(" Your input is empty. ");
-            }
-        } catch ( Exception e) {
-            System.out.println("There 's a problem" + e.getMessage());
+        if(lastName == null || lastName.trim().isEmpty()) {
+            throw new IllegalArgumentException("The lastname can't be empty!");
         }
-
+        this.lastName = lastName;
     }
 
     public void setEmail(String email) {
-        try {
-            if ( email != null && !email.trim().isEmpty()){
-                this.email = email;
-            } else {
-                System.out.println(" Your input is empty. ");
-            }
-        } catch ( Exception e) {
-            System.out.println("There 's a problem" + e.getMessage());
+        if(email == null || email.trim().isEmpty()) {
+            throw new IllegalArgumentException("The lastname can't be empty!");
         }
+        this.email = email;
+    }
+
+    public String getSummary(){
+        return "id: " + this.id + ", " + "name: " + getFirstName() + " " + getLastName() + " email: " + getEmail();
     }
 }

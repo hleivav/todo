@@ -3,6 +3,8 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Hello, World!");
+        Person person = new Person(1, "Hernan", "Leiva", "hleiva@hotmail.com");
+        System.out.println(person.getSummary());
+        //person.getFirstName();
     }
 }
