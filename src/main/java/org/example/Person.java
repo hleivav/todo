@@ -65,6 +65,7 @@ public class Person {
         this.email = email;
     }
 
+    //other methods
     public String getSummary(){
         return "id: " + this.id + ", " + "name: " + getFirstName() + " " + getLastName() + " email: " + getEmail();
     }
